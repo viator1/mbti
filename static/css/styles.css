@@ -78,7 +78,7 @@
 
 body {
   margin: 0;
-  font-family: var(--bs-body-font-family);
+  font-family: 'Jua';
   font-size: var(--bs-body-font-size);
   font-weight: var(--bs-body-font-weight);
   line-height: var(--bs-body-line-height);
@@ -4506,7 +4506,19 @@ textarea.form-control-lg {
 .navbar-dark .navbar-text a:focus {
   color: #fff;
 }
+.navbar__icons{
+  list-style: none;
+  color: white;
+  display: flex;
+  padding-left: 0;
+}
+.navbar__icons li{
+  padding: 8px 12px;
+}
 
+.navbar__icons{
+  justify-content: center;
+}
 .card {
   position: relative;
   display: flex;

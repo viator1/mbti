@@ -34,6 +34,18 @@ urlpatterns = [
     path('ENFJ/',views.ENFJ),
     
     path('ENTJ/',views.ENTJ),
+
+    path('ENTJ/',views.ENTJ),
+
+    path('what/',views.what),
+
+    path('kinds/',views.kinds),
+
+    path('freeboard/',views.freeboard),
+
+    path('counseling/',views.counseling),
+    
+    path('bd/',views.bd),
     
     
     

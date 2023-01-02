@@ -34,3 +34,13 @@ def ENFJ(request):
     return render(request, 'mbti/ENFJ.html')
 def ENTJ(request):
     return render(request, 'mbti/ENTJ.html')
+def what(request):
+    return render(request, 'mbti/what.html')
+def kinds(request):
+    return render(request, 'mbti/kinds.html')
+def freeboard(request):
+    return render(request, 'mbti/freeboard.html')
+def counseling(request):
+    return render(request, 'mbti/counseling.html')
+def bd(request):
+    return render(request, 'mbti/bd.html')
