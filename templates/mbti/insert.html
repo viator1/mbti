@@ -1,0 +1,10 @@
+<meta charset="utf8">
+
+<form action="/file/insert/" 
+      method="post">
+    <input type="text" name="name">
+    <input type="text" name="mbti">
+    <input type="text" name="description">
+    <button>저장</button>
+    {% csrf_token %}
+</form>
