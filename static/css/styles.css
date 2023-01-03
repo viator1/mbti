@@ -7989,7 +7989,7 @@ textarea.form-control-lg {
 
 @media (min-width: 576px) {
   .float-sm-start {
-    float: left !important;
+    float: left !`ant;
   }
 
   .float-sm-end {
