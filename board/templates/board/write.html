@@ -58,7 +58,7 @@
                                 data-bs-toggle="dropdown" aria-expanded="false">게시판</a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 
-                                <li><a class="dropdown-item" href="http://127.0.0.1:8000/mbti/freeboard/">자유 게시판</a>
+                                <li><a class="dropdown-item" href="http://127.0.0.1:8000/freeboard/">자유 게시판</a>
                                 </li>
                                 <li><a class="dropdown-item" href="http://127.0.0.1:8000/mbti/counseling/">고민상담
                                     </a></li>
@@ -115,40 +115,22 @@
     <section class="py-5">
         <div class="jumbotron">
             <div class="container text-center">
-              <table class="table table-hover">
-                <thead>
-                  <tr>
-                    <th>id</th>
-                    <th>title</th>
-                    <th>content</th>
-                    <th>created_at</th>
-                    <th>updated_at</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {% for p in post %}
-                  <tr onclick = 'location="/boarder/detail/{{p.id}}"'>
-                    <td>{{ p.id }}</td>
-                    <td>{{ p.title }}</td>
-                    <td>{{ p.content }}</td>
-                    <td>{{ p.created_at }}</td>
-                    <td>{{ p.updated_at }}</td>
-                  </tr>
-                  {% endfor %}
-                </tbody>
-              </table>
-              {% for info in page_info %}
-                <a href='/freeboard/?page={{ info }}'>
-                {{ info }}
-                </a>
-              {% endfor %}
+              <form method="post" action="/write/">
+                {% csrf_token %}
+                <div class="form-group">
+                  <label for="title">Title:</label>
+                  <input type="text" class="form-control" name="title" id="title">
+                </div>
+                <div class="form-group">
+                  <label for="content">Content:</label>
+                  <textarea class="form-control" rows="5" name="content" id="content"></textarea>
+                </div>
+                <button type="submit" id="complete" class="btn btn-primary btn-block">
+                  글쓰기
+                </button>
+              </form>
             </div>
-        </div>
+          </div>
       </section>
   </body>
 </html>
-
-
-
-
-    

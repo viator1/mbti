@@ -16,3 +16,14 @@ class Post(models.Model):
     def __str__(self):
         return f"[{self.pk}]{self.title}"  # [해당 포스트의 pk값]해당 포스트의 title 값
 
+from django.contrib.auth.models import User
+class Write(models.Model):
+    title = models.CharField(max_length=30)
+    content = models.TextField()
+    auth_user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
+
+
+    
+
+
+
