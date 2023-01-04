@@ -22,6 +22,7 @@ urlpatterns = [
     path("mbti/", include('secondapp.urls')),
     path("accounts/", include('accounts.urls')),
     path("file/", include('file.urls')),
+    path("board/", include('board.urls')),
     path("", views.main),
 
     
