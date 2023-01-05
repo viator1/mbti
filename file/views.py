@@ -43,7 +43,7 @@ def index(request):
         start = end - 10
     
     page_info = range(s_page, e_page+1)
-    data= Mbtidata.objects.order_by('-id')
+    data= Mbtidata.objects.all()
     data = data[start:end]
     context = { 
         'data' : data,
