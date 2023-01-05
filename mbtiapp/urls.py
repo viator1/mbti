@@ -8,6 +8,9 @@ urlpatterns = [
     
     path('freeboard/', views.freeboard),
     path('write/', views.write),
+    path('freeboard/detail/<int:id>/', views.detail),
+    path('freeboard/edit/<int:id>/', views.edit),
+    path('freeboard/delete/<int:id>/', views.delete),
     
     
    
