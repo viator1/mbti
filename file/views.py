@@ -25,28 +25,6 @@ def show(request):
 
 
 def index(request):
-    page=request.GET.get('page')
-    if not page: page='1'
-
-    page=int(page)
-    end = page*10
-    start = end-10
-
-    s_page = (page-1)//10*10+1 
-    e_page = s_page+9
-
-    total_count = Mbtidata.objects.all().count()
-    total_page = total_count//10
-    if page > total_page:
-        page = total_page
-        end = page*10
-        start = end - 10
-    
-    page_info = range(s_page, e_page+1)
-    data= Mbtidata.objects.all()
-    data = data[start:end]
-    context = { 
-        'data' : data,
-        'page_info' : page_info
-    }
+    datas = Mbtidata.objects.all()
+    context = {'datas': datas}
     return render(request, 'file/index.html', context)
