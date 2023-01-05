@@ -28,6 +28,7 @@ def freeboard(request):
     'page_info' : page_info
   }
   return render(request, 'board/freeboard.html', context)
+  
 from django.contrib.auth.models import User
 
 def write(request):
