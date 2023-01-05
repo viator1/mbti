@@ -1,10 +1,13 @@
-<meta charset="utf8">
+{% extends 'mbti/base.html' %}
+{% block content %}
 
 <form action="/file/insert/" 
       method="post">
-    <input type="text" name="name">
-    <input type="text" name="mbti">
-    <input type="text" name="description">
+    <input type="text" name="name" placeholder="이름을 입력해주세요." style="width:365px;"><br><br>
+    <input type="text" name="mbti"placeholder="MBTI 종류를 입력해주세요."style="width:365px;"><br><br>
+    <textarea name="description" cols="33" rows="5"></textarea><br><br>
     <button>저장</button>
+    
     {% csrf_token %}
 </form>
+{% endblock %}
