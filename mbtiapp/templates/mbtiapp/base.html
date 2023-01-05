@@ -50,30 +50,20 @@
                   aria-expanded="false">게시판</a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 
-                  <li><a class="dropdown-item" href="http://127.0.0.1:8000/mbti/freeboard/">자유 게시판</a></li>
-                  <li><a class="dropdown-item" href="http://127.0.0.1:8000/mbti/counseling/">고민상담
+                  <li><a class="dropdown-item" href="http://127.0.0.1:8000/freeboard/">자유 게시판</a></li>
+                  <li><a class="dropdown-item" href="http://127.0.0.1:8000/counseling/">고민상담
                     </a></li>
-                  <li><a class="dropdown-item" href="http://127.0.0.1:8000/mbti/bd/">소개팅</a></li>
+                  <li><a class="dropdown-item" href="http://127.0.0.1:8000/blind/date">소개팅</a></li>
                 </ul>
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown"
                   aria-expanded="false">로그인</a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="http://127.0.0.1:8000/accounts/login">로그인</a></li>
+                  <li><a class="dropdown-item" href="http://127.0.0.1:8000/login">로그인</a></li>
 
-                  <li><a class="dropdown-item" href="http://127.0.0.1:8000/accounts/logout">로그아웃</a></li>
-                  <li><a class="dropdown-item" href="http://127.0.0.1:8000/accounts/signup">회원가입</a></li>
-                  <li>
-                    <hr class="dropdown-divider" />
-                  </li>
-                  <li class="nav-item" id="accounts_123">
-                    {% if user.is_authenticated %}
-                    <p>{{ user.username }} 님 반갑습니다.</p>
-                    {% else %}
-                    <p> 현재 상태 : Guest</p>
-                    {% endif %}
-                  </li>
+                  <li><a class="dropdown-item" href="http://127.0.0.1:8000/logout">로그아웃</a></li>
+                  <li><a class="dropdown-item" href="http://127.0.0.1:8000/signup">회원가입</a></li>
                 </ul>
               <li><a style="text-decoration:none" href="http://www.facebook.com"
                   class="fa-brands fa-square-facebook fa-3x"></a></li>
@@ -90,11 +80,11 @@
     </nav>
     <!-- Header-->
     <header class="bg-white py-5">
-      <div class="container px-4 px-lg-5 ">
-        <div class="text-center text-dark">
-          <br>
+        <div class="container px-4 px-lg-5 my-5">
+            <div class="text-center text-dark">
+            <br><h1 class="display-1 fw-bolder">소심한 "I"들의 <br>거침없는 "E"사이트</h1>
+            </div>
         </div>
-      </div>
     </header>
     <!-- Section-->
     <section class="py-5">
