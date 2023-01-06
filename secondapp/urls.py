@@ -46,6 +46,8 @@ urlpatterns = [
     path('counseling/',views.counseling),
     
     path('bd/',views.bd),
+
+    path('detail/',views.post_detail)
     
     
     

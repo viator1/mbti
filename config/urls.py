@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from firstapp import views
+
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("index/", views.index),
@@ -23,6 +24,7 @@ urlpatterns = [
     path("accounts/", include('accounts.urls')),
     path("file/", include('file.urls')),
     path("board/", include('board.urls')),
+    path("secondapp/", include('secondapp.urls')),
     path("", include('mbtiapp.urls')),
     path("", views.main),
 

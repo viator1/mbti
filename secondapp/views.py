@@ -1,6 +1,9 @@
 
 from django.shortcuts import render
 
+from file.models import Mbtidata
+from secondapp.models import MbtiDetail
+
 
 def ISTJ(request):
     return render(request, 'mbti/ISTJ.html')
@@ -45,3 +48,23 @@ def counseling(request):
 def bd(request):
     return render(request, 'mbti/bd.html')
 
+def post_detail(request):
+  page=request.GET.get('page')
+  if not page: page='1'
+
+  page=int(page)
+  end = page*10
+  start = end-10
+
+  s_page = (page-1)//10*10+1 
+  e_page = s_page+9
+  page_info = range(s_page, e_page+1)
+
+  data_list = Mbtidata.objects.order_by('-id')
+  data_list = data_list[start:end]
+  context = { 
+    'data_list' : data_list,
+    'page_info' : page_info
+  }
+  return render(request, 'secondapp/detail.html', context)
+    
