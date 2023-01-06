@@ -23,7 +23,6 @@ def show(request, kind):
     return render(request, 'mbti/%s.html' % kind, {
         'data': mbtidata })
 
-
 def index(request):
     datas = Mbtidata.objects.all()
     context = {'datas': datas}
