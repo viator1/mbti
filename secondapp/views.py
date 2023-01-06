@@ -44,3 +44,4 @@ def counseling(request):
     return render(request, 'mbti/counseling.html')
 def bd(request):
     return render(request, 'mbti/bd.html')
+
