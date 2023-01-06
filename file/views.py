@@ -14,7 +14,7 @@ def insert(request):
     m.mbti=mbti
     m.description=description
     m.save()
-    return render(request,'mbti/insert_success.html')
+    return redirect('/')
 
 
 def show(request, kind):
