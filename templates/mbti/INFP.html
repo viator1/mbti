@@ -1,10 +1,13 @@
 {% extends 'mbti/base.html' %}
 {% block content %}
+<header>
     <!-- Call to Action-->
 <div class="card text-navy bg-black my-5 py-4 text-center">
     <div class="card-body"><p class="text-white m-0" style="font-size:60px;" >INFP - "중재자"<br>(Introversion iNtuition Feeling Perceiving)</p></div>
 </div>
 <!-- Content Row-->
+</header>
+<section>
 <div class="row gx-4 gx-lg-5">
     <div class="col-md-4 mb-5">
         <div class="card h-100">
@@ -49,4 +52,38 @@
 </div>
 </body>
 </html>
+</section>
+<footer>
+{% for a in data %}
+    <div class="profile-card">
+        <div class="lazyload-wrapper ">
+            <img src="/static/image/enfj.jpg">
+        </div>
+        <div class="info" >
+            {{a.name}}
+        </div>
+        <div class="type">
+            {{a.mbti}}
+        </div>
+    </div>
+{% endfor %}
+</footer>
+<style>
+    .profile-card {
+        width: 50vw; height: 10vw;
+        position: relative;
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        background-color: snow;
+        border-radius: 16px;
+        overflow: hidden;
+    }
+    .type{position: relative;
+          left: 15vw;
+    }
+    .info{position:relative;
+          left:5vw
+    }
+    </style>
 {% endblock %}

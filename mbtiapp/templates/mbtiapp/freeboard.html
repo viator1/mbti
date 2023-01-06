@@ -88,7 +88,7 @@
     </header>
 <div class="jumbotron">
   <div class="container text-center">
-    <table class="table table-hover" href="http://127.0.0.1:8000/freeboard/detail/{{ article.id }}">
+    <table class="table table-hover" href="http://127.0.0.1:8000/freeboard/detail/<{{ article.id }}>">
       <thead>
         <tr>
           <th></th>
@@ -102,19 +102,20 @@
       <tbody>
         {% for article in article_list %}
         <tr>
+          
           <td >{{ article.id }}</td>
           <td>{{ article.title }}</td>
           <td>{{ article.content }}</td>
           <td>{{ article.user.name }}</td>
-          <td><button class="btn btn-default"><a href="http://127.0.0.1:8000/freeboard/detail/{{ article.id }}/" style="color: black;">detail</div></a></button></td>
-
+          <td><button class="btn btn-default"><a href="http://127.0.0.1:8000/freeboard/detail/{{ article.id }}/" style="color: black;">more</div></a></button></td>
+          
         </tr>
         </a></button>
         {% endfor %}
       </tbody>
     </table>
 
-    <button type="move" id="write" class="btn btn-primary btn-block">
+    <button class="btn btn-primary btn-block">
       <a href="http://127.0.0.1:8000/write/">
         <div style="color: white;">글 쓰기</div>
       </a>

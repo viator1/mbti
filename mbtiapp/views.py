@@ -83,8 +83,10 @@ def detail(request, id):
 
 def detail(request, id):
   article = Article.objects.get(id=id)
+  comments = Comment.objects.filter(article=article)
   context = { 
-    'article' : article 
+    'article' : article,
+    'comments' : comments 
   }
   return render(request, 'mbtiapp/detail.html', context)
 
@@ -115,3 +117,12 @@ def delete(request, id):
     return redirect('/freeboard/')
   except:
     return render(request, 'mbtiapp/delete_fail.html')
+
+def comment(request):
+  if request.method == 'POST':
+    comment = request.POST.get('comment')
+    id = request.POST.get('id')
+    article = Article.objects.get(pk=id)
+    c = Comment(comment=comment, article=article)
+    c.save()
+    return redirect('/freeboard/detail/%s/' % id)

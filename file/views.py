@@ -14,13 +14,13 @@ def insert(request):
     m.mbti=mbti
     m.description=description
     m.save()
-    return redirect('/file/show/')
+    return render(request,'mbti/insert_success.html')
 
 
-def show(request):
-    mbtidata=Mbtidata.objects.all()
+def show(request, kind):
+    mbtidata=Mbtidata.objects.filter(mbti='%s'%kind)
 
-    return render(request, 'mbti/show.html', {
+    return render(request, 'mbti/%s.html' % kind, {
         'data': mbtidata })
 
 
